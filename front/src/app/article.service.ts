@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Article } from './interfaces/article';
 
+const ARTICLE = 'article';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -10,7 +12,7 @@ export class ArticleService {
   constructor() {}
 
   getArticles(): Article[] {
-    const str = localStorage.getItem('articles');
+    const str = localStorage.getItem(ARTICLE);
     if (!str) {
       return [
         { name: 'Tournevis', price: 2.34, qty: 120 },
@@ -24,7 +26,7 @@ export class ArticleService {
   }
 
   save(): void {
-    localStorage.setItem('articles', JSON.stringify(this.articles));
+    localStorage.setItem(ARTICLE, JSON.stringify(this.articles));
   }
 
   add(article: Article): void {
