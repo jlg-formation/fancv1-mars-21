@@ -14,25 +14,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="name">Tournevis</td>
-          <td class="price">2.34 €</td>
-          <td class="qty">120</td>
-        </tr>
-        <tr>
-          <td class="name">Tournevis Cruciforme</td>
-          <td class="price">3.45 €</td>
-          <td class="qty">120</td>
-        </tr>
-        <tr>
-          <td class="name">Pince</td>
-          <td class="price">2.34 €</td>
-          <td class="qty">120</td>
-        </tr>
-        <tr>
-          <td class="name">Marteau</td>
-          <td class="price">10.00 €</td>
-          <td class="qty">120</td>
+        <tr *ngFor="let a of articleService.articles">
+          <td class="name">{{ a.name }}</td>
+          <td class="price">{{ a.price }} €</td>
+          <td class="qty">{{ a.qty }}</td>
         </tr>
       </tbody>
     </table>
