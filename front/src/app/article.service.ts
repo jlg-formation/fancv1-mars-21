@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Article } from './interfaces/article';
 
-const ARTICLE = 'article';
+const ARTICLE = 'articles';
 
 @Injectable({
   providedIn: 'root',
