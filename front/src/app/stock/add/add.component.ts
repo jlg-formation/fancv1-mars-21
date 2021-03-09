@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ArticleService } from 'src/app/article.service';
+import { Article } from 'src/app/interfaces/article';
 
 @Component({
   selector: 'app-add',
@@ -13,7 +16,13 @@ export class AddComponent implements OnInit {
     qty: new FormControl('100', [Validators.required]),
   });
 
-  constructor() {}
+  constructor(public articleService: ArticleService, public router: Router) {}
 
   ngOnInit(): void {}
+
+  submit(): void {
+    console.log('submit');
+    this.articleService.add(this.f.value as Article);
+    this.router.navigateByUrl('/stock');
+  }
 }

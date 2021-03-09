@@ -1,6 +1,6 @@
 <main>
   <h1>Ajouter un article</h1>
-  <form [formGroup]="f">
+  <form [formGroup]="f" (ngSubmit)="submit()">
     <label>
       <div>Nom</div>
       <input type="text" [formControlName]="'name'" />
@@ -13,6 +13,6 @@
       <div>Quantité</div>
       <input type="number" formControlName="qty" min="0" />
     </label>
-    <button [disabled]="f.invalid">Ajouter</button>
+    <button type="submit" [disabled]="f.invalid">Ajouter</button>
   </form>
 </main>
