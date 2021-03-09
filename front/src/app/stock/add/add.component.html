@@ -1,17 +1,17 @@
 <main>
   <h1>Ajouter un article</h1>
-  <form>
+  <form [formGroup]="f">
     <label>
       <div>Nom</div>
-      <input type="text" />
+      <input type="text" [formControlName]="'name'" />
     </label>
     <label>
       <div>Prix</div>
-      <input type="text" />
+      <input type="text" formControlName="price" />
     </label>
     <label>
       <div>Quantité</div>
-      <input type="text" />
+      <input type="text" formControlName="qty" />
     </label>
     <button>Ajouter</button>
   </form>
