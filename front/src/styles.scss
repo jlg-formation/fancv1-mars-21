@@ -10,6 +10,10 @@ main {
   display: flex;
   flex-flow: column;
   align-items: center;
+  padding: 0.5em;
+  max-width: 50em;
+  width: 100%;
+  margin: 0 auto;
 }
 
 button {
