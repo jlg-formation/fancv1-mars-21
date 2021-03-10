@@ -21,7 +21,7 @@
           (click)="toggle(a)"
           *ngFor="let a of articleService.articles"
         >
-          <td class="name">{{ a.name | ellipsis }}</td>
+          <td class="name">{{ a.name | ellipsis: 12:"...." }}</td>
           <td class="price">{{ a.price }} €</td>
           <td class="qty">{{ a.qty }}</td>
         </tr>
