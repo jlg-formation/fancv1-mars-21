@@ -17,7 +17,7 @@ export class ArticleHttpService extends ArticleService {
 
   refresh(): void {
     this.http
-      .get<Article[]>('http://localhost:3000/api/articles')
+      .get<Article[]>('/api/articles')
       // tslint:disable-next-line: deprecation
       .subscribe({
         next: (data) => {
