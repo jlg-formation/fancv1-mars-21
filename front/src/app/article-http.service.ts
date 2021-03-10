@@ -32,4 +32,23 @@ export class ArticleHttpService extends ArticleService {
         },
       });
   }
+
+  add(article: Article): void {
+    super.add(article);
+    this.http
+      .post<void>('/api/articles', article)
+      // tslint:disable-next-line: deprecation
+      .subscribe({
+        next: () => {
+          console.log('article added');
+          this.refresh();
+        },
+        error: (error) => {
+          console.log('error: ', error);
+        },
+        complete: () => {
+          console.log('complete');
+        },
+      });
+  }
 }
