@@ -3,7 +3,12 @@
   <form [formGroup]="f" (ngSubmit)="submit()">
     <label>
       <div>Nom</div>
-      <input type="text" [formControlName]="'name'" appAutofocus />
+      <input
+        type="text"
+        [formControlName]="'name'"
+        appAutofocus="tutu"
+        toto="titi"
+      />
     </label>
     <label>
       <div>Prix</div>
