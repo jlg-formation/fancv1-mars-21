@@ -20,8 +20,9 @@ export class ArticleHttpService extends ArticleService {
       .get<Article[]>('/api/articles')
       // tslint:disable-next-line: deprecation
       .subscribe({
-        next: (data) => {
-          console.log('data: ', data);
+        next: (articles) => {
+          console.log('articles: ', articles);
+          this.articles = articles;
         },
         error: (error) => {
           console.log('error: ', error);

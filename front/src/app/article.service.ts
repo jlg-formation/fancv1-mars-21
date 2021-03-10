@@ -14,13 +14,7 @@ export class ArticleService {
   getArticles(): Article[] {
     const str = localStorage.getItem(ARTICLE);
     if (!str) {
-      return [
-        { name: 'Tournevis', price: 2.34, qty: 120 },
-        { name: 'Tournevis Cruciforme', price: 3.45, qty: 100 },
-        { name: 'Marteau', price: 5.1, qty: 200 },
-        { name: 'Tondeuse à gazon', price: 200, qty: 8 },
-        { name: 'Pince', price: 5, qty: 100 },
-      ];
+      return [];
     }
     return JSON.parse(str) as Article[];
   }
