@@ -8,4 +8,9 @@ export class AppPage {
   async getTitleText(): Promise<string> {
     return element(by.css('header span')).getText();
   }
+
+  async clickOnCheckStockBtn(): Promise<void> {
+    const button = element(by.cssContainingText('button', 'Voir le stock'));
+    await button.click();
+  }
 }
