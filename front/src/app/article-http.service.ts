@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { ArticleService } from './article.service';
 import { Article } from './interfaces/article';
@@ -41,6 +41,29 @@ export class ArticleHttpService extends ArticleService {
       .subscribe({
         next: () => {
           console.log('article added');
+          this.refresh();
+        },
+        error: (error) => {
+          console.log('error: ', error);
+        },
+        complete: () => {
+          console.log('complete');
+        },
+      });
+  }
+
+  remove(articles: Article[]): void {
+    super.remove(articles);
+    const options = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+      body: JSON.stringify(articles.map((a) => a.id)),
+    };
+    this.http
+      .delete<void>('/api/articles', options)
+      // tslint:disable-next-line: deprecation
+      .subscribe({
+        next: () => {
+          console.log('article removed');
           this.refresh();
         },
         error: (error) => {
