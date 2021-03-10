@@ -38,5 +38,10 @@ table {
     //   overflow: hidden;
     //   max-width: 8em;
     // }
+
+    td.price,
+    td.qty {
+      text-align: right;
+    }
   }
 }
