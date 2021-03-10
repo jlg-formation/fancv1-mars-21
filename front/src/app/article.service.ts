@@ -28,7 +28,7 @@ export class ArticleService {
     this.save();
   }
 
-  remove(articles: Article[]) {
+  remove(articles: Article[]): void {
     this.articles = this.articles.filter((a) => !articles.includes(a));
     this.save();
   }
